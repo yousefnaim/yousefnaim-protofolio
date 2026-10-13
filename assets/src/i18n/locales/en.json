@@ -1,0 +1,223 @@
+{
+  "ed": {
+    "nav": {
+      "about": "About",
+      "work": "Work",
+      "stack": "Stack",
+      "experience": "Experience",
+      "contact": "Contact",
+      "menu": "Menu",
+      "close": "Close",
+      "light": "Light",
+      "dark": "Dark",
+      "skip": "Skip to content",
+      "music": "Music",
+      "music_on": "Play music",
+      "music_off": "Mute music",
+      "sfx": "Sound effects",
+      "sfx_on": "Turn sound effects off",
+      "sfx_off": "Turn sound effects on"
+    },
+    "hero": {
+      "kicker": "Portfolio",
+      "role": "Full-stack developer",
+      "statement": "I build production web and mobile products — the interface, the API, the database, and the deploy.",
+      "cta_work": "Selected work",
+      "cta_contact": "Get in touch",
+      "based": "Based in",
+      "based_v": "City, Country",
+      "exp": "Experience",
+      "exp_v": "3+ years",
+      "stack": "Core stack",
+      "stack_v": "React, Node.js, PostgreSQL",
+      "status": "Status",
+      "status_v": "Open to work",
+      "scroll": "Scroll"
+    },
+    "about": {
+      "label": "About",
+      "pre": "I build complete products — ",
+      "em": "the interface people touch and the secure API behind it",
+      "post": ". Write one honest sentence about your experience and the kind of work you do.",
+      "portrait": "Your Name, City",
+      "stats": [
+        {
+          "v": "3+",
+          "l": "Years building"
+        },
+        {
+          "v": "6",
+          "l": "Shipped systems"
+        },
+        {
+          "v": "Web + Mobile",
+          "l": "Surfaces"
+        },
+        {
+          "v": "< 24h",
+          "l": "Reply time"
+        }
+      ],
+      "what": "What I do"
+    },
+    "work": {
+      "label": "Selected work",
+      "title": "Work",
+      "count": "{{n}} projects",
+      "hint": "Select a project to open its case.",
+      "open": "Open case",
+      "live": "View live site",
+      "private": "Production system — no public demo",
+      "about": "About",
+      "stack": "Stack",
+      "kind": "Type",
+      "screens": "Screens",
+      "next": "Next project",
+      "prev": "Previous",
+      "kinds": [
+        "Web platform",
+        "Operations dashboard"
+      ]
+    },
+    "stack": {
+      "label": "Stack",
+      "title": "Tools I ship with",
+      "intro": "One line about how you choose and use your tools."
+    },
+    "experience": {
+      "label": "Experience",
+      "title": "Where I've worked",
+      "hint": "Open a row for the details.",
+      "now": "Now"
+    },
+    "contact": {
+      "label": "Contact",
+      "title_a": "Let's build",
+      "title_b": "something real.",
+      "text": "Open to full-time roles, freelance projects, and a good conversation. I usually reply within a day.",
+      "email": "Email",
+      "copy": "Copy",
+      "copied": "Copied",
+      "whatsapp": "WhatsApp",
+      "form_title": "Or write it here",
+      "name": "Your name",
+      "mail": "Your email",
+      "message": "Tell me about the project",
+      "send": "Send message",
+      "sending": "Sending…",
+      "sent": "Sent. I'll get back to you soon.",
+      "failed": "Couldn't send that. Try email or WhatsApp instead.",
+      "e_name": "Enter your name",
+      "e_mail": "Enter your email",
+      "e_mail_bad": "That email doesn't look right",
+      "e_msg": "Write a short message"
+    },
+    "footer": {
+      "local": "Local time",
+      "top": "Back to top",
+      "rights": "© {{year}} Your Name",
+      "built": "Designed and built by me."
+    }
+  },
+  "about": {
+    "highlights": [
+      {
+        "title": "Highlight one",
+        "text": "One short line about something you do well"
+      },
+      {
+        "title": "Highlight two",
+        "text": "One short line about something you do well"
+      },
+      {
+        "title": "Highlight three",
+        "text": "One short line about something you do well"
+      },
+      {
+        "title": "Highlight four",
+        "text": "One short line about something you do well"
+      },
+      {
+        "title": "Highlight five",
+        "text": "One short line about something you do well"
+      },
+      {
+        "title": "Highlight six",
+        "text": "One short line about something you do well"
+      }
+    ]
+  },
+  "skills": {
+    "categories": [
+      "Full-Stack Core",
+      "Data & APIs",
+      "Product & Delivery"
+    ]
+  },
+  "experience": {
+    "items": [
+      {
+        "period": "2024 — Present",
+        "role": "Your role",
+        "company": "Company",
+        "description": "What you do there, in one or two sentences.",
+        "achievements": [
+          "A concrete result",
+          "Another concrete result"
+        ]
+      },
+      {
+        "period": "2022 — 2024",
+        "role": "Previous role",
+        "company": "Previous company",
+        "description": "What you did there.",
+        "achievements": [
+          "A concrete result"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "subtitle": "What it is in a few words",
+        "description": "One or two sentences about the product and your part in it.",
+        "labels": [
+          "Screen one",
+          "Screen two"
+        ]
+      },
+      {
+        "subtitle": "Another product",
+        "description": "One or two sentences about the product and your part in it.",
+        "labels": [
+          "Screen one"
+        ]
+      }
+    ]
+  },
+  "ai_chat": {
+    "header_title": "Ask about me",
+    "panel_hint": "Ask about my skills, projects, or how to reach me.",
+    "chip_who": "Who is this?",
+    "chip_skills": "Tech stack?",
+    "chip_work": "Work experience?",
+    "chip_projects": "Projects?",
+    "chip_contact": "How to contact?",
+    "send_who": "Who is the owner of this portfolio?",
+    "send_skills": "What is the tech stack and what does this person specialise in?",
+    "send_work": "What is the work experience?",
+    "send_projects": "List all projects in order, with a link for each one that has a live site.",
+    "send_contact": "How can I get in touch?",
+    "placeholder": "Ask a question or pick a quick one…",
+    "btn_send": "Send",
+    "btn_thinking": "Thinking…",
+    "err_no_key": "The assistant isn't available right now. Please try again later.",
+    "err_quota_exceeded": "Daily AI limit reached. Please try again later.",
+    "err_rate_limit": "Too many requests right now. Please wait a few seconds and retry.",
+    "err_request": "Something went wrong with the AI request.",
+    "close": "Close",
+    "toggle": "Open portfolio assistant"
+  },
+  "lang_label": "AR"
+}

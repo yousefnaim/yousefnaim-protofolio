@@ -1,0 +1,131 @@
+/* =============================================================================
+   Assistant panel — editorial skin (scoped under .ai-input)
+   Uses --ed-* tokens declared in editorial/editorial.css
+   ============================================================================= */
+
+.ai-input { position: relative !important; z-index: 10 !important; }
+
+.ai-input__toggle {
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  width: 3rem !important; height: 3rem !important; padding: 0 !important; margin: 0 !important;
+  border: 1px solid var(--ed-ink) !important; border-radius: 0 !important;
+  background: var(--ed-bg) !important; color: var(--ed-ink) !important;
+  cursor: pointer !important; box-shadow: 4px 4px 0 var(--ed-ink) !important;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease !important;
+}
+.ai-input__toggle:hover {
+  transform: translate(2px, 2px) !important; box-shadow: 2px 2px 0 var(--ed-ink) !important;
+  background: var(--ed-accent) !important; color: #fff !important; border-color: var(--ed-ink) !important;
+}
+
+.ai-input__panel {
+  position: absolute !important; inset-inline-end: 0 !important; inset-inline-start: auto !important;
+  top: auto !important;
+  bottom: calc(100% + 14px) !important;
+  display: flex !important; flex-direction: column !important;
+  width: min(420px, calc(100vw - 32px)) !important;
+  max-height: min(560px, calc(100vh - 140px)) !important;
+  padding: 0 !important; border-radius: 0 !important;
+  border: 1px solid var(--ed-ink) !important;
+  background: var(--ed-bg) !important; color: var(--ed-ink) !important;
+  box-shadow: 8px 8px 0 var(--ed-ink) !important;
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+}
+
+.ai-input__header {
+  display: flex !important; align-items: center !important; justify-content: space-between !important;
+  margin: 0 !important; padding: .7rem .9rem !important; border-bottom: 1px solid var(--ed-ink) !important;
+}
+.ai-input__title {
+  display: flex !important; align-items: center !important; gap: .5rem !important; margin: 0 !important; padding: 0 !important;
+  font-family: var(--ed-mono) !important; font-size: .72rem !important; font-weight: 500 !important;
+  letter-spacing: .08em !important; text-transform: uppercase !important; color: var(--ed-ink) !important;
+}
+.ai-input__title svg { flex-shrink: 0 !important; color: var(--ed-accent) !important; }
+.ai-input__close {
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  width: 2rem !important; height: 2rem !important; padding: 0 !important; margin: 0 !important;
+  border: 1px solid var(--ed-line) !important; border-radius: 0 !important;
+  background: transparent !important; color: var(--ed-ink) !important; cursor: pointer !important;
+  transition: background .15s ease, color .15s ease !important;
+}
+.ai-input__close:hover { background: var(--ed-ink) !important; color: var(--ed-bg) !important; }
+
+.ai-input__body {
+  display: flex !important; flex-direction: column !important; flex: 1 1 auto !important;
+  min-height: 0 !important; gap: .7rem !important; padding: .9rem !important;
+}
+.ai-input__chips { display: flex !important; flex-wrap: wrap !important; gap: .4rem !important; margin: 0 !important; padding: 0 !important; }
+.ai-input__chip {
+  display: inline-flex !important; align-items: center !important; padding: .32rem .6rem !important; margin: 0 !important;
+  border: 1px solid var(--ed-line) !important; border-radius: 0 !important; background: transparent !important;
+  color: var(--ed-ink) !important; font-family: var(--ed-mono) !important; font-size: .7rem !important;
+  line-height: 1.3 !important; cursor: pointer !important;
+  transition: background .15s ease, color .15s ease, border-color .15s ease !important;
+}
+.ai-input__chip:hover:not(:disabled) { background: var(--ed-ink) !important; color: var(--ed-bg) !important; border-color: var(--ed-ink) !important; }
+.ai-input__chip:disabled { opacity: .4 !important; cursor: not-allowed !important; }
+
+.ai-input__chat {
+  flex: 1 1 auto !important; min-height: 9rem !important; max-height: 16rem !important;
+  overflow-x: hidden !important; overflow-y: auto !important; overscroll-behavior: contain !important;
+  touch-action: pan-y !important; padding: .6rem !important; margin: 0 !important; box-sizing: border-box !important;
+  border: 1px solid var(--ed-line) !important; border-radius: 0 !important; background: var(--ed-bg2) !important;
+}
+.ai-input__chat-empty {
+  margin: 0 !important; padding: .75rem .4rem !important; font-size: .82rem !important; line-height: 1.6 !important;
+  color: var(--ed-mute) !important; text-align: start !important;
+}
+.ai-input__row { display: flex !important; width: 100% !important; margin-bottom: .6rem !important; }
+.ai-input__row--user { justify-content: flex-end !important; }
+.ai-input__row--assistant { justify-content: flex-start !important; }
+.ai-input__bubble {
+  max-width: 90% !important; padding: .55rem .75rem !important; margin: 0 !important; box-sizing: border-box !important;
+  border-radius: 0 !important; font-size: .86rem !important; line-height: 1.55 !important;
+  overflow-wrap: anywhere !important; white-space: pre-wrap !important;
+}
+.ai-input__bubble--user { margin-inline-start: auto !important; background: var(--ed-ink) !important; color: var(--ed-bg) !important; border: 1px solid var(--ed-ink) !important; }
+.ai-input__bubble--assistant { margin-inline-end: auto !important; background: var(--ed-bg) !important; color: var(--ed-ink) !important; border: 1px solid var(--ed-line) !important; }
+.ai-input__bubble--typing { display: flex !important; align-items: center !important; gap: .35rem !important; padding: .7rem .9rem !important; }
+.ai-input__text-run { display: inline !important; }
+.ai-input__bubble a.ai-input__link, .ai-input__link {
+  display: inline !important; color: var(--ed-accent) !important; font-weight: 600 !important;
+  text-decoration: underline !important; text-underline-offset: 3px !important; word-break: break-all !important; cursor: pointer !important;
+}
+.ai-input__bubble--user a.ai-input__link { color: #ffb08a !important; }
+.ai-input__dot { width: .34rem !important; height: .34rem !important; border-radius: 50% !important; background: var(--ed-ink) !important; opacity: .35; animation: ai-input-dot 1.1s ease-in-out infinite; }
+.ai-input__dot:nth-child(2) { animation-delay: .15s; }
+.ai-input__dot:nth-child(3) { animation-delay: .3s; }
+@keyframes ai-input-dot { 0%, 100% { opacity: .3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
+.ai-input__chat-error {
+  margin: .3rem 0 0 !important; padding: .55rem .7rem !important; border-radius: 0 !important; font-size: .8rem !important;
+  line-height: 1.5 !important; color: var(--ed-accent) !important; background: transparent !important; border: 1px solid var(--ed-accent) !important;
+}
+.ai-input__form { display: flex !important; flex-direction: row !important; align-items: stretch !important; gap: .5rem !important; padding: 0 !important; flex-shrink: 0 !important; }
+.ai-input__textarea {
+  display: block !important; width: 100% !important; min-height: 3rem !important; box-sizing: border-box !important;
+  padding: .7rem .8rem !important; margin: 0 !important; border-radius: 0 !important; border: 1px solid var(--ed-ink) !important;
+  background: var(--ed-bg) !important; color: var(--ed-ink) !important; font-size: .86rem !important; line-height: 1.5 !important;
+  font-family: inherit !important; resize: none !important; outline: none !important; transition: box-shadow .15s ease !important;
+}
+.ai-input__textarea::placeholder { color: var(--ed-mute) !important; }
+.ai-input__textarea:focus { box-shadow: 3px 3px 0 var(--ed-accent) !important; }
+.ai-input__textarea.ai-input__textarea--chat { flex: 1 1 auto !important; min-height: 3rem !important; max-height: 3rem !important; }
+.ai-input__submit {
+  display: flex !important; align-items: center !important; justify-content: center !important; gap: .5rem !important;
+  box-sizing: border-box !important; padding: .6rem !important; margin: 0 !important; border: 1px solid var(--ed-ink) !important;
+  border-radius: 0 !important; font-size: .9rem !important; font-weight: 500 !important; font-family: inherit !important;
+  color: #fff !important; cursor: pointer !important; background: var(--ed-accent) !important; box-shadow: none !important;
+  transition: background .15s ease, color .15s ease, opacity .15s ease !important;
+}
+.ai-input__submit:hover:not(:disabled) { background: var(--ed-ink) !important; }
+.ai-input__submit:disabled { opacity: .5 !important; cursor: not-allowed !important; }
+.ai-input__submit--icon { width: 3rem !important; min-width: 3rem !important; height: 3rem !important; padding: 0 !important; flex: 0 0 auto !important; }
+
+@media (max-width: 480px) {
+  .ai-input__panel {
+    position: fixed !important; inset: 0 !important; width: 100vw !important; max-width: none !important;
+    height: 100dvh !important; max-height: none !important; box-shadow: none !important; border: 0 !important; z-index: 2500 !important;
+  }
+  .ai-input__chat { flex: 1 1 auto !important; max-height: none !important; min-height: 0 !important; }
+}
