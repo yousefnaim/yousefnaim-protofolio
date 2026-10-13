@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neo-brutalist design system — style guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Cairo:wght@400;700;900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var t = null; try { t = localStorage.getItem('sg-theme') } catch (e) {}
+      document.documentElement.dataset.theme = t === 'dark' ? 'dark' : 'light';
+    })();
+  </script>
+  <!-- the real stylesheet used by the kit; every component below uses its classes -->
+  <link rel="stylesheet" href="../assets/src/brutal/brutal.css" />
+  <style>
+    .sg { padding-bottom: 90px; }
+    .sg h1, .sg h2, .sg h3 { margin: 0; }
+    .sg-top { position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; padding: 12px clamp(16px, 4vw, 40px); background: var(--nb-yellow); color: #111; border-bottom: 3px solid #111; }
+    .sg-top nav { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sg-top a { padding: 5px 10px; border: 2px solid #111; background: #fff; color: #111; font: 700 13px var(--nb-mono); text-transform: uppercase; }
+    .sg-top a:hover { background: var(--nb-pink); }
+    .sg-top .nb-pill { background: #fff; color: #111; border-color: #111; }
+    .sg-hero { background: var(--nb-yellow); color: #111; padding: clamp(40px, 7vw, 90px) 0; border-bottom: 3px solid #111; background-image: radial-gradient(#11111122 2px, transparent 2.5px); background-size: 22px 22px; }
+    .sg-hero h1 { font-family: var(--nb-display); font-weight: 800; text-transform: uppercase; font-size: clamp(48px, 10vw, 150px); line-height: .9; letter-spacing: -.04em; text-shadow: 6px 6px 0 var(--nb-pink); }
+    .sg-hero p { margin-top: 22px; max-width: 46em; padding: 16px 18px; background: #fff; border: 3px solid #111; box-shadow: 7px 7px 0 #111; font: 700 clamp(17px, 1.6vw, 22px)/1.4 var(--nb-display); }
+    .sg-sec { padding: clamp(40px, 6vw, 80px) 0; border-bottom: 3px solid var(--nb-line); }
+    .sg-sec > .nb-wrap > h2 { font-family: var(--nb-display); font-weight: 800; text-transform: uppercase; font-size: clamp(34px, 5vw, 64px); letter-spacing: -.03em; line-height: 1; margin-bottom: 8px; }
+    .sg-sec > .nb-wrap > .sg-lead { color: var(--nb-mute); margin: 0 0 28px; max-width: 52em; }
+    .sg-tag { display: inline-block; padding: 4px 10px; background: #111; color: var(--nb-yellow); transform: rotate(-2deg); margin-bottom: 12px; }
+    .sg-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+    .sg-sw { border: 3px solid var(--nb-line); box-shadow: 6px 6px 0 var(--nb-line); background: var(--nb-card); color: var(--nb-text); }
+    .sg-sw i { display: block; height: 96px; border-bottom: 3px solid var(--nb-line); }
+    .sg-sw div { padding: 10px 12px; font-size: 14px; line-height: 1.45; }
+    .sg-sw b { display: block; font: 800 18px var(--nb-display); }
+    .sg-sw code, .sg code { font-family: var(--nb-mono); font-size: 12.5px; }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .sg-spec { width: 100%; border-collapse: collapse; background: var(--nb-card); color: var(--nb-text); border: 3px solid var(--nb-line); }
+    .sg-spec th, .sg-spec td { text-align: start; padding: 10px 12px; border-bottom: 2px solid var(--nb-line); vertical-align: top; font-size: 14.5px; }
+    .sg-spec th { background: #111; color: var(--nb-yellow); font: 500 12px var(--nb-mono); text-transform: uppercase; }
+    .sg-type > div { display: grid; grid-template-columns: 170px 1fr; gap: 14px; align-items: baseline; padding: 14px 0; border-bottom: 3px dashed var(--nb-line); }
+    .sg-type small { font: 500 12px var(--nb-mono); text-transform: uppercase; color: var(--nb-mute); }
+    .sg-shadow { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 26px; }
+    .sg-shadow div { height: 84px; display: grid; place-items: center; background: var(--nb-card); color: var(--nb-text); border: 3px solid var(--nb-line); font: 700 14px var(--nb-mono); }
+    .sg-tilt div { padding: 14px 18px; background: var(--nb-card); color: var(--nb-text); border: 3px solid var(--nb-line); box-shadow: 5px 5px 0 var(--nb-line); font: 700 14px var(--nb-mono); }
+    .sg-demo { background: var(--nb-blue); padding: 28px; border: 3px solid var(--nb-line); }
+    .sg-card { max-width: 360px; background: var(--nb-card); color: var(--nb-text); border: 3px solid var(--nb-line); box-shadow: 8px 8px 0 #111; transition: transform .25s var(--nb-ease), box-shadow .25s var(--nb-ease); }
+    .sg-card:hover { transform: translate(-5px, -5px) rotate(-.6deg); box-shadow: 14px 14px 0 #111; }
+    .sg-card .top { display: flex; justify-content: space-between; padding: 10px 14px; background: var(--nb-pink); color: #111; border-bottom: 3px solid var(--nb-line); }
+    .sg-card .img { aspect-ratio: 16/10; background: var(--nb-paper2); border-bottom: 3px solid var(--nb-line); display: grid; place-items: center; font: 500 12px var(--nb-mono); color: var(--nb-mute); }
+    .sg-card .body { padding: 16px 18px 18px; display: grid; gap: 10px; }
+    .sg-card h3 { font: 800 28px/1.05 var(--nb-display); letter-spacing: -.025em; }
+    .sg-do { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .sg-do > div { padding: 18px; border: 3px solid #111; box-shadow: 6px 6px 0 #111; color: #111; }
+    .sg-do ul { margin: 10px 0 0; padding-inline-start: 18px; line-height: 1.6; }
+    .sg-foot { padding: 30px 0; text-align: center; font: 500 13px var(--nb-mono); text-transform: uppercase; }
+    .sg-motion .m { width: 90px; height: 90px; background: var(--nb-pink); border: 3px solid #111; box-shadow: 6px 6px 0 #111; display: grid; place-items: center; font: 700 13px var(--nb-mono); color: #111; cursor: pointer; transition: transform .2s var(--nb-ease), box-shadow .2s var(--nb-ease); }
+    .sg-motion .m:hover { transform: translate(-3px, -3px) rotate(-3deg); box-shadow: 9px 9px 0 #111; }
+    .sg-motion .m:active { transform: translate(5px, 5px); box-shadow: 0 0 0 #111; }
+    @media (max-width: 640px) { .sg-type > div { grid-template-columns: 1fr; gap: 4px; } }
+  </style>
+</head>
+<body style="margin:0">
+<div class="nb sg">
+
+  <div class="sg-top">
+    <strong class="nb-mono">Neo-brutalist design system</strong>
+    <nav class="nb-mono">
+      <a href="#color">Color</a><a href="#type">Type</a><a href="#shape">Shape</a><a href="#components">Components</a><a href="#motion">Motion</a><a href="#rules">Rules</a>
+    </nav>
+    <span class="nb-tools">
+      <button class="nb-pill" id="theme">Dark</button>
+      <button class="nb-pill" id="dir">AR / RTL</button>
+    </span>
+  </div>
+
+  <header class="sg-hero">
+    <div class="nb-wrap">
+      <span class="sg-tag nb-mono">style guide · v1</span>
+      <h1>Flat color.<br />Hard shadows.</h1>
+      <p>Thick borders, solid offset shadows, saturated flat colors, slightly tilted cards. Every component below is live — hover and press them. Values come straight from <code>brutal.css</code>; the written spec is <code>references/design-system-spec.md</code>.</p>
+    </div>
+  </header>
+
+  <!-- ===== COLOR ===== -->
+  <section class="sg-sec" id="color">
+    <div class="nb-wrap">
+      <span class="sg-tag nb-mono">01</span>
+      <h2>Color</h2>
+      <p class="sg-lead">Saturated colors never change between themes. Text on any of them is <code>#111</code> (contrast shown). Neutrals and the line color flip in dark mode.</p>
+
+      <div class="sg-grid" style="margin-bottom:30px">
+        <div class="sg-sw"><i style="background:#ffd600"></i><div><b>Yellow</b><code>#ffd600</code> · 13.4:1<br />Brand, hero, active, highlights, CTAs</div></div>
+        <div class="sg-sw"><i style="background:#ff6b9d"></i><div><b>Pink</b><code>#ff6b9d</code> · 7.1:1<br />Accent, hover, offset blocks, title shadow</div></div>
+        <div class="sg-sw"><i style="background:#5b8cff"></i><div><b>Blue</b><code>#5b8cff</code> · 6.0:1<br />Work section, stat tile, focus ring</div></div>
+        <div class="sg-sw"><i style="background:#3ddc84"></i><div><b>Green</b><code>#3ddc84</code> · 10.6:1<br />Status, success, stat tile</div></div>
+        <div class="sg-sw"><i style="background:#ff8a3d"></i><div><b>Orange</b><code>#ff8a3d</code> · 8.1:1<br />Secondary highlight tiles</div></div>
+        <div class="sg-sw"><i style="background:#c3b1ff"></i><div><b>Lilac</b><code>#c3b1ff</code> · 9.9:1<br />Experience section, stack column</div></div>
+        <div class="sg-sw"><i style="background:#111111"></i><div><b>Black</b><code>#111111</code><br />Borders on fills, tags, footer</div></div>
+        <div class="sg-sw"><i style="background:#d6002f"></i><div><b>Error</b><code>#d6002f</code><br />Invalid fields only</div></div>
+      </div>
+
+      <table class="sg-spec">
+        <thead><tr><th>Neutral</th><th>Light</th><th>Dark</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td><code>--nb-paper</code></td><td><code>#fffdf5</code></td><td><code>#151515</code></td><td>Page background</td></tr>
+          <tr><td><code>--nb-paper2</code></td><td><code>#f3eedd</code></td><td><code>#1e1e1e</code></td><td>Inset surfaces</td></tr>
+          <tr><td><code>--nb-card</code></td><td><code>#ffffff</code></td><td><code>#242424</code></td><td>Cards, nav bar, buttons</td></tr>
+          <tr><td><code>--nb-text</code></td><td><code>#111111</code></td><td><code>#f5f1e6</code></td><td>Body text (neutral surfaces)</td></tr>
+          <tr><td><code>--nb-mute</code></td><td><code>#4d4a42</code></td><td><code>#b5b0a2</code></td><td>Secondary text (8.7:1 / 8.4:1)</td></tr>
+          <tr><td><code>--nb-line</code></td><td><code>#111111</code></td><td><code>#f5f1e6</code></td><td>Borders and shadows on neutrals</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== TYPE ===== -->
+  <section class="sg-sec" id="type">
+    <div class="nb-wrap">
+      <span class="sg-tag nb-mono">02</span>
+      <h2>Typography</h2>
+      <p class="sg-lead">Bricolage Grotesque for display, Space Grotesk for text, JetBrains Mono for labels. Arabic uses Cairo everywhere with no tracking and no uppercase.</p>
+      <div class="sg-type">
+        <div><small>Display · 800 · uppercase · −0.04em</small><span style="font:800 clamp(44px,7vw,96px)/.9 var(--nb-display);text-transform:uppercase;letter-spacing:-.04em">Ship it loud</span></div>
+        <div><small>Card title · 800 · −0.025em</small><span style="font:800 34px/1.05 var(--nb-display);letter-spacing:-.025em">Multi-vendor marketplace</span></div>
+        <div><small>Lead · 700</small><span style="font:700 24px/1.25 var(--nb-display)">I build complete products, from the interface to the database.</span></div>
+        <div><small>Body · Space Grotesk 17px</small><span style="font-size:17px">Body copy stays calm and readable so the borders and colors can do the shouting. It keeps a 1.5 line-height and wraps at about 60 characters.</span></div>
+        <div><small>Label · mono 13px · uppercase</small><span class="nb-mono">Next.js · Node.js · PostgreSQL</span></div>
+        <div><small>Arabic · Cairo 900 · no tracking</small><span lang="ar" dir="rtl" style="font:900 36px/1.3 'Cairo',sans-serif">منتجات حقيقية بلا زخرفة</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHAPE ===== -->
+  <section class="sg-sec" id="shape">
+    <div class="nb-wrap">
+      <span class="sg-tag nb-mono">03</span>
+      <h2>Shape</h2>
+      <p class="sg-lead">Square corners, 3px borders, and solid offset shadows with no blur. Hover adds +3px; press removes the shadow entirely.</p>
+
+      <h3 class="nb-mono" style="margin:0 0 14px">Shadow scale</h3>
+      <div class="sg-shadow" style="margin-bottom:40px">
+        <div style="box-shadow:3px 3px 0 var(--nb-line)">3px</div>
+        <div style="box-shadow:4px 4px 0 var(--nb-line)">4px</div>
+        <div style="box-shadow:5px 5px 0 var(--nb-line)">5px</div>
+        <div style="box-shadow:6px 6px 0 var(--nb-line)">6px</div>
+        <div style="box-shadow:8px 8px 0 var(--nb-line)">8px</div>
+        <div style="box-shadow:10px 10px 0 var(--nb-line)">10px</div>
+        <div style="box-shadow:14px 14px 0 var(--nb-line)">14px</div>
+      </div>
+
+      <h3 class="nb-mono" style="margin:0 0 14px">Tilt vocabulary</h3>
+      <div class="sg-row sg-tilt">
+        <div style="transform:rotate(-.7deg)">±0.6–0.8° large cards</div>
+        <div style="transform:rotate(1.4deg)">±1–1.6° panels</div>
+        <div style="transform:rotate(-2deg)">±2° tags</div>
+        <div style="transform:rotate(-5deg)">−4…−6° badges</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPONENTS ===== -->
+  <section class="sg-sec" id="components">
+    <div class="nb-wrap">
+      <span class="sg-tag nb-mono">04</span>
+      <h2>Components</h2>
+      <p class="sg-lead">Built from the kit's real classes. Hover and click them.</p>
+
+      <h3 class="nb-mono" style="margin:0 0 14px">Buttons</h3>
+      <div class="sg-row" style="margin-bottom:34px">
+        <button class="nb-btn">Default <span class="nb-arrow">→</span></button>
+        <button class="nb-btn nb-btn--pink">Primary <span class="nb-arrow">→</span></button>
+        <button class="nb-btn nb-btn--yellow">Secondary <span class="nb-arrow">↗</span></button>
+        <button class="nb-btn" disabled>Disabled</button>
+      </div>
+
+      <h3 class="nb-mono" style="margin:0 0 14px">Pills, chips, tags</h3>
+      <div class="sg-row" style="margin-bottom:34px">
+        <button class="nb-pill">Dark</button><button class="nb-pill">AR</button>
+        <span class="nb-chip nb-mono">Next.js</span><span class="nb-chip nb-mono">Node.js</span><span class="nb-chip nb-chip--fill nb-mono">Live</span>
+        <span class="nb-head__tag nb-mono"><span>01</span><span>About</span></span>
+      </div>
+
+      <h3 class="nb-mono" style="margin:0 0 14px">Stat and highlight tiles</h3>
+      <div class="nb-stats" style="margin:0 0 34px">
+        <div class="nb-stat"><b>3+</b><span class="nb-mono">Years building</span></div>
+        <div class="nb-stat"><b>6</b><span class="nb-mono">Shipped systems</span></div>
+        <div class="nb-stat"><b>Web + Mobile</b><span class="nb-mono">Surfaces</span></div>
+        <div class="nb-stat"><b>&lt; 24h</b><span class="nb-mono">Reply time</span></div>
+      </div>
+      <div class="nb-what" style="margin:0 0 34px"><ol>
+        <li><h3>Full-stack products</h3><p>One short line about something you do well.</p></li>
+        <li><h3>Backend architecture</h3><p>One short line about something you do well.</p></li>
+        <li><h3>Modern interfaces</h3><p>One short line about something you do well.</p></li>
+        <li><h3>Mobile ecosystems</h3><p>One short line about something you do well.</p></li>
+      </ol></div>
+
+      <h3 class="nb-mono" style="margin:0 0 14px">Project card (on its section color)</h3>
+      <div class="sg-demo" style="margin-bottom:34px">
+        <div class="sg-card">
+          <div class="top nb-mono"><span style="background:#111;color:#fff;padding:2px 10px">01</span><span>Web platform</span></div>
+          <div class="img">cover image 16 : 10</div>
+          <div class="body">
+            <h3>Project title</h3>
+            <span style="color:var(--nb-mute)">What it is in a few words</span>
+            <span style="display:flex;gap:6px;flex-wrap:wrap" class="nb-mono"><span class="nb-chip">React</span><span class="nb-chip">Node.js</span></span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="nb-mono" style="margin:0 0 14px">Form field</h3>
+      <form class="nb-form" style="max-width:480px;transform:none;margin-bottom:10px" onsubmit="return false">
+        <label class="nb-field"><span>Your name</span><input placeholder="Type here — focus me" /></label>
+        <label class="nb-field err"><span>Your email (error state)</span><input value="not-an-email" /><em class="nb-err">That email doesn't look right</em></label>
+        <button class="nb-btn nb-btn--pink" style="justify-self:start">Send message <span class="nb-arrow">→</span></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== MOTION ===== -->
+  <section class="sg-sec" id="motion">
+    <div class="nb-wrap">
+      <span class="sg-tag nb-mono">05</span>
+      <h2>Motion</h2>
+      <p class="sg-lead">One springy easing (<code>cubic-bezier(.34,1.56,.64,1)</code>), short durations, transform and opacity only.</p>
+      <div class="sg-row sg-motion" style="margin-bottom:24px"><div class="m">hover</div><div class="m">press</div></div>
+      <table class="sg-spec">
+        <thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead>
+        <tbody>
+          <tr><td>Button / small</td><td><code>0.18s</code> spring</td><td>Buttons, pills</td></tr>
+          <tr><td>Card / tile</td><td><code>0.2–0.3s</code> spring</td><td>Cards, stats, tiles</td></tr>
+          <tr><td>Reveal</td><td><code>0.55s</code> opacity · <code>0.7s</code> transform</td><td>Scroll-in; stagger with <code>--d</code></td></tr>
+          <tr><td>Slide</td><td><code>0.5–0.7s</code> <code>cubic-bezier(.7,0,.2,1)</code></td><td>Loader exit, mobile menu</td></tr>
+          <tr><td>Loops</td><td>blink 1.2s · spin 14s · ticker 30s · EQ 0.9s</td><td>Decoration (off under reduced motion)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== RULES ===== -->
+  <section class="sg-sec" id="rules">
+    <div class="nb-wrap">
+      <span class="sg-tag nb-mono">06</span>
+      <h2>Do / Don't</h2>
+      <div class="sg-do" style="margin-top:20px">
+        <div style="background:var(--nb-green)"><b class="nb-mono">Do</b>
+          <ul><li>Flat saturated fills, 3px borders, solid shadows</li><li>Keep text <code>#111</code> on any color fill</li><li>Tilt a little, straighten on hover</li><li>Lift on hover (+3px), press on click</li><li>Animate transform and opacity</li><li>Use logical CSS properties for RTL</li></ul></div>
+        <div style="background:var(--nb-pink)"><b class="nb-mono">Don't</b>
+          <ul><li>Gradients, blur, glow, glass, drop-shadow filters</li><li>Rounded-everything or soft shadows</li><li>More than the six palette colors</li><li>Theme-flipping text on a color fill</li><li>Letter-spacing or uppercase on Arabic</li><li>Animate layout properties</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sg-foot">Open <code>references/design-system-spec.md</code> for every exact value · tokens in <code>design-system/tokens.css</code> and <code>tokens.json</code></div>
+</div>
+
+<script>
+  var root = document.documentElement, themeBtn = document.getElementById('theme'), dirBtn = document.getElementById('dir');
+  function syncTheme() { themeBtn.textContent = root.dataset.theme === 'dark' ? 'Light' : 'Dark'; }
+  themeBtn.onclick = function () {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('sg-theme', root.dataset.theme) } catch (e) {}
+    syncTheme();
+  };
+  dirBtn.onclick = function () {
+    var ar = root.lang !== 'ar';
+    root.lang = ar ? 'ar' : 'en'; root.dir = ar ? 'rtl' : 'ltr';
+    dirBtn.textContent = ar ? 'EN / LTR' : 'AR / RTL';
+  };
+  syncTheme();
+</script>
+</body>
+</html>

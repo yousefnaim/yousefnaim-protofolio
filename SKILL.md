@@ -64,6 +64,12 @@ Rules while filling in: write facts only the owner can confirm; never invent cli
 5. If the assistant is deployed: ask a contact question, a list-all-projects question, and something not in the data (it must say it doesn't know).
 6. The preview pane may be hidden (animations paused) — confirm motion with a second screenshot or a real browser.
 
+## Design-system artifacts
+
+- `DESIGN-SYSTEM.md` — overview + palette/rules table with links.
+- `design-system/tokens.css` and `tokens.json` — the tokens for use outside the React kit.
+- `design-system/styleguide.html` — living style guide (open in a browser): palette with contrast, type scale, shadow/tilt scales, every component, motion, do/don't.
+
 ## References (read when needed)
 
 - `references/design-system-spec.md` — **the exact design system**: principles, every color and where it goes, contrast numbers, type scale, spacing, shadow/border/tilt scales, motion tokens, z-index, breakpoints, component anatomy and states.

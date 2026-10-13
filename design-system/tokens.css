@@ -1,0 +1,54 @@
+/* Standalone design tokens for the neo-brutalist style (copy of the token block in
+   assets/src/brutal/brutal.css). Use these in any project, not just the React kit.
+   Apply the class `nb` to a wrapper (or rename the selector to :root). */
+
+.nb {
+  /* palette — constant in both themes */
+  --nb-yellow: #ffd600;
+  --nb-pink: #ff6b9d;
+  --nb-blue: #5b8cff;
+  --nb-green: #3ddc84;
+  --nb-orange: #ff8a3d;
+  --nb-lilac: #c3b1ff;
+  --nb-black: #111111;
+  --nb-error: #d6002f;
+
+  /* neutrals — flip with theme */
+  --nb-paper: #fffdf5;
+  --nb-paper2: #f3eedd;
+  --nb-card: #ffffff;
+  --nb-text: #111111;
+  --nb-mute: #4d4a42;
+  --nb-line: #111111;
+
+  /* shape */
+  --nb-b: 3px;          /* border */
+  --nb-sh: 6px;         /* default shadow offset; scale: 3 4 5 6 7 8 10, hover +3, active 0 */
+
+  /* type */
+  --nb-display: 'Bricolage Grotesque', 'Space Grotesk', system-ui, sans-serif;
+  --nb-body: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --nb-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* motion */
+  --nb-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+:root[data-theme='dark'] .nb {
+  --nb-paper: #151515;
+  --nb-paper2: #1e1e1e;
+  --nb-card: #242424;
+  --nb-text: #f5f1e6;
+  --nb-mute: #b5b0a2;
+  --nb-line: #f5f1e6;
+}
+html[lang='ar'] .nb {
+  --nb-display: 'Cairo', system-ui, sans-serif;
+  --nb-body: 'Cairo', system-ui, sans-serif;
+  --nb-mono: 'Cairo', monospace;
+}
+
+/* signature recipes */
+.nb-surface { background: var(--nb-card); color: var(--nb-text); border: var(--nb-b) solid var(--nb-line); box-shadow: var(--nb-sh) var(--nb-sh) 0 var(--nb-line); }
+.nb-surface--lift { transition: transform .2s var(--nb-ease), box-shadow .2s var(--nb-ease); }
+.nb-surface--lift:hover  { transform: translate(-3px, -3px); box-shadow: calc(var(--nb-sh) + 3px) calc(var(--nb-sh) + 3px) 0 var(--nb-line); }
+.nb-surface--lift:active { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--nb-line); }

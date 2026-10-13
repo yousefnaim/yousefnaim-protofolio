@@ -4,6 +4,10 @@ A Claude Code skill + a complete React/Vite portfolio template: thick borders, h
 EN/AR (RTL), light/dark, case-study overlay, generative music and hover sounds, and an optional
 server-side RAG chat assistant for Vercel.
 
+![Design system preview](design-system/preview-1.png)
+
+**Design system:** see [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md) · open [`design-system/styleguide.html`](design-system/styleguide.html) for the live style guide.
+
 ## Install the skill
 
 ```bash
@@ -20,6 +24,8 @@ ask for a portfolio in this style. You can also use `assets/` on its own without
 
 ```
 SKILL.md                 how the skill works + rules
+design-system/           tokens.css, tokens.json, styleguide.html (living style guide), preview images
+DESIGN-SYSTEM.md         design system overview with palette, rules, and links
 references/              design-system-spec (exact values), design-system (recipes), interaction & sound, i18n/RTL, assistant (RAG), deploy & secrets
 assets/                  the kit: src/, api/, index.html, vite.config.js, vercel.json, package.deps.json
 ```
