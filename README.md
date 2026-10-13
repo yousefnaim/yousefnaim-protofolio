@@ -20,7 +20,7 @@ ask for a portfolio in this style. You can also use `assets/` on its own without
 
 ```
 SKILL.md                 how the skill works + rules
-references/              design system, interaction & sound, i18n/RTL, assistant (RAG), deploy & secrets
+references/              design-system-spec (exact values), design-system (recipes), interaction & sound, i18n/RTL, assistant (RAG), deploy & secrets
 assets/                  the kit: src/, api/, index.html, vite.config.js, vercel.json, package.deps.json
 ```
 

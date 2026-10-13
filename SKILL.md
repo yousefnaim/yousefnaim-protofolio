@@ -37,7 +37,7 @@ A full, tested portfolio template extracted from a production site. Everything i
 
 Rules while filling in: write facts only the owner can confirm; never invent clients, numbers, dates, or links; keep tech names in English in both languages; `projects.items[i]` in the locale files must line up with `i18nIndex`.
 
-## Design language (summary — details in `references/design-system.md`)
+## Design language (summary — exact values in `references/design-system-spec.md`)
 
 - **Flat color only.** No gradients, glow, blur, glass, or purple "AI" look. Depth = border + hard shadow.
 - **Borders** `3px solid var(--nb-line)` · **shadows** solid offsets (`5px/8px 8px 0`, `12–14px` on hover) · **tilt** `-2°…2°`, straighten on hover.
@@ -66,7 +66,8 @@ Rules while filling in: write facts only the owner can confirm; never invent cli
 
 ## References (read when needed)
 
-- `references/design-system.md` — tokens, class catalog, section recipes, how to recolor or add a section.
+- `references/design-system-spec.md` — **the exact design system**: principles, every color and where it goes, contrast numbers, type scale, spacing, shadow/border/tilt scales, motion tokens, z-index, breakpoints, component anatomy and states.
+- `references/design-system.md` — class catalog, section recipes, how to recolor or add a section.
 - `references/interaction-and-sound.md` — hover/press behavior, reveal system, music + SFX architecture and tuning.
 - `references/i18n-and-rtl.md` — locale structure, key map, Arabic typography, RTL checklist.
 - `references/assistant-rag.md` — how the chat endpoint works, knowledge chunks, tuning retrieval and the prompt.

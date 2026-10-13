@@ -2,6 +2,8 @@
 
 All CSS is in `assets/src/brutal/brutal.css`, scoped under `.nb`. Prefix every class with `nb-`.
 
+> The complete, exact specification (every value and its rationale) is in `design-system-spec.md`. This file is the practical companion: class catalog, section recipes, and how to extend.
+
 ## Tokens (declared on `.nb`)
 
 ```css
