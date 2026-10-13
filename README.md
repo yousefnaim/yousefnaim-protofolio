@@ -6,7 +6,9 @@ server-side RAG chat assistant for Vercel.
 
 ![Design system preview](design-system/preview-1.png)
 
-**Design system:** see [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md) · open [`design-system/styleguide.html`](design-system/styleguide.html) for the live style guide.
+**Live style guide:** https://yousefnaim.github.io/yousefnaim-protofolio/design-system/styleguide.html
+
+**Design system:** see [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md) · or open [`design-system/styleguide.html`](design-system/styleguide.html) for the live style guide.
 
 ## Install the skill
 

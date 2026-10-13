@@ -5,7 +5,9 @@ Flat saturated color, thick borders, solid offset shadows, slightly tilted cards
 ![Style guide — colors and hero](design-system/preview-1.png)
 ![Style guide — shape and components](design-system/preview-2.png)
 
-> **Open the live style guide:** after cloning, open [`design-system/styleguide.html`](design-system/styleguide.html) in a browser (it loads the kit's real stylesheet, has a light/dark toggle and an RTL toggle, and every component is hoverable).
+> **Live style guide:** https://yousefnaim.github.io/yousefnaim-protofolio/design-system/styleguide.html
+>
+> Or, after cloning, open [`design-system/styleguide.html`](design-system/styleguide.html) in a browser (it loads the kit's real stylesheet, has a light/dark toggle and an RTL toggle, and every component is hoverable).
 
 ## At a glance
 
